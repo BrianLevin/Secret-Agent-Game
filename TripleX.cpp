@@ -16,14 +16,14 @@ std::cout << "Enter the correct code to continue...";  // expression statement a
 // expression followed by a semi colin is a semi statement
 // declaration statements  where we declare somthing
 
-    const  int sum = CodeA+ CodeB +CodeC; // sum varable
+    const  int CodeSum = CodeA + CodeB + CodeC; // sum varable
 
-      const int product = CodeA * CodeB * CodeC; // mult variable // declariative staement
+      const int CodeProduct = CodeA * CodeB * CodeC; // mult variable // declariative staement
 // cout= character output  << allows to write characters in terminal, also known as the insertion operator
      std::cout << std::endl; // line break
      std::cout << "+ There are three numbers in the code" << std::endl;
-     std::cout <<  "+ The codes add  up to: " <<  sum << std::endl;  // print sum // expression staement
-     std::cout << "+ The codes Multiply to give: " << product << std::endl; 
+     std::cout <<  "+ The codes add  up to: " <<  CodeSum << std::endl;  // print sum // expression staement
+     std::cout << "+ The codes Multiply to give: " << CodeProduct << std::endl; 
      //std::cout << product << std::endl;  // print product
 
 //  character input extraction from Guess variables
@@ -37,6 +37,16 @@ std::cout << "Enter the correct code to continue...";  // expression statement a
 
      int GuessProduct = GuessA * GuessB * GuessC;
 
+     if(GuessSum == CodeSum && GuessProduct == CodeProduct) // conditional statement
+     {
+std::cout << "you win!"; // ececutes if condition is met
+
+     }
+     else{
+std:: cout << "you lose!"; // excutes if condition is not met
+
+     }
+
 // chracters like x get converted to 0
      // program will only ask for more cin if input stream is empty
      
@@ -47,9 +57,13 @@ std::cout << "Enter the correct code to continue...";  // expression statement a
 
 // g++
 // std::cin >> player game
-//cin= character output
+//cin= character intput
 // cout= character output
 //insertiion operator= <<
 //cin = character input
 // >> extration operator = >>
 // extract from input stream and assign to  variable: "player guess"
+
+// == equality operator
+
+// && logical and operator
