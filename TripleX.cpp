@@ -19,19 +19,37 @@ std::cout << "Enter the correct code to continue...";  // expression statement a
     const  int sum = CodeA+ CodeB +CodeC; // sum varable
 
       const int product = CodeA * CodeB * CodeC; // mult variable // declariative staement
-
+// cout= character output  << allows to write characters in terminal, also known as the insertion operator
      std::cout << std::endl; // line break
      std::cout << "+ There are three numbers in the code" << std::endl;
      std::cout <<  "+ The codes add  up to: " <<  sum << std::endl;  // print sum // expression staement
      std::cout << "+ The codes Multiply to give: " << product << std::endl; 
-     std::cout << product << std::endl;  // print product
+     //std::cout << product << std::endl;  // print product
 
-     int PlayerGuess;
+//  character input extraction from Guess variables
+     int GuessA, GuessB, GuessC; 
+     std::cin >> GuessA;
+     std::cin >> GuessB;
+     std::cin >> GuessC;
+     
+
+     int GuessSum= GuessA + GuessB + GuessC;
+
+     int GuessProduct = GuessA * GuessB * GuessC;
+
+// chracters like x get converted to 0
+     // program will only ask for more cin if input stream is empty
      
     return 0; //    return 0= program has ru +bn successfully, compiler ignores white space. g++ triplex.cpp -o triplex, ./triplex
 // return statement
-
  
 }
 
 // g++
+// std::cin >> player game
+//cin= character output
+// cout= character output
+//insertiion operator= <<
+//cin = character input
+// >> extration operator = >>
+// extract from input stream and assign to  variable: "player guess"
