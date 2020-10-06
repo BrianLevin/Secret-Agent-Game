@@ -1,11 +1,21 @@
 #include <iostream> // allow us to write the text to the terminal from the library ## include a proporoccer to include a library of code stream is a library of code
 // preprocessor directive
 
-int main(){ // int main required in every c++ program //main function
-// std short for standard is the name space for the function :: check for code inside the nae space, cout allows to write  to the terminal, << allows output from the terminal, "is a string" whole line is called the expression statement
-std::cout << "You are a secret agent breaking into a secure service room";// name space, scope operator, cout allows output, expression stateme
-std::cout <<  std::endl; // line break
-std::cout << "Enter the correct code to continue...";  // expression statement a statement that ends with a semi colen
+void PrintIntroduction() // | \n new line sequence in strings, a function is a group of staements that is named  and performs a task, must a  stepcify a return type in a function , void to return no data.
+{
+std::cout << "\n\nYou are a secret agent breaking into a secure server room...\n";
+std::cout << "Enter the correct code to continue... \n\n";
+
+
+}
+// return a boolan value
+bool PlayGame()//  void retrn type //name PlayGame // void means it will return no data functions are a group of staements that perform a task with a name
+{
+  PrintIntroduction();
+
+//std::cout << "You are a secret agent breaking into a secure service room...\n";// name space, scope operator, cout allows output, expression stateme
+//std::cout <<  std::endl; // line break
+//std::cout << "Enter the correct code to continue...\n\n";  // expression statement a statement that ends with a semi colen
 
 
 
@@ -21,34 +31,53 @@ std::cout << "Enter the correct code to continue...";  // expression statement a
       const int CodeProduct = CodeA * CodeB * CodeC; // mult variable // declariative staement
 // cout= character output  << allows to write characters in terminal, also known as the insertion operator
      std::cout << std::endl; // line break
-     std::cout << "+ There are three numbers in the code" << std::endl;
-     std::cout <<  "+ The codes add  up to: " <<  CodeSum << std::endl;  // print sum // expression staement
-     std::cout << "+ The codes Multiply to give: " << CodeProduct << std::endl; 
+     std::cout << "+ There are three numbers in the code"; //<< std::endl; only use \\n within a string and not in a variable name
+     std::cout <<  "\n+ The codes add  up to: " <<  CodeSum; //<< std::endl;  // print sum // expression staement
+     std::cout << "\n+ The codes Multiply to give: " << CodeProduct << std::endl; 
      //std::cout << product << std::endl;  // print product
 
 //  character input extraction from Guess variables
+
+// store player guess
      int GuessA, GuessB, GuessC; 
-     std::cin >> GuessA;
-     std::cin >> GuessB;
-     std::cin >> GuessC;
+     std::cin >> GuessA >> GuessB >> GuessC;
+     
      
 
      int GuessSum= GuessA + GuessB + GuessC;
 
      int GuessProduct = GuessA * GuessB * GuessC;
 
+     // check if the player guess is correct
+
      if(GuessSum == CodeSum && GuessProduct == CodeProduct) // conditional statement
      {
-std::cout << "you win!"; // ececutes if condition is met
-
+std::cout << "\n you win!"; // ececutes if condition is met
+return true; // no void must contain a retur statement   for all exist paths of the function
      }
      else{
-std:: cout << "you lose!"; // excutes if condition is not met
+std:: cout << "\n you lose!"; // excutes if condition is not met
+return false;
 
      }
+
+
+}
+
+
+
+int main(){ // int main required in every c++ program //main function
+// std short for standard is the name space for the function :: check for code inside the nae space, cout allows to write  to the terminal, << allows output from the terminal, "is a string" whole line is called the expression statement
 
 // chracters like x get converted to 0
      // program will only ask for more cin if input stream is empty
+     while(true){ // while the condition is true, execute the function
+        bool bLevelComplete= PlayGame(); // if the player has completed the level
+       std::cin.clear();// clear any errors  //  ignres the erro to prevent endless loop
+       std::cin.ignore();// discards the buffer // helps prevent endless loop if a wrong character is is put in
+     }
+
+     
      
     return 0; //    return 0= program has ru +bn successfully, compiler ignores white space. g++ triplex.cpp -o triplex, ./triplex
 // return statement
