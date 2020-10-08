@@ -20,9 +20,9 @@ bool PlayGame(int Difficulty)//  void retrn type //name PlayGame // void means i
 
 
 
-   const  int CodeA = 4; // const variable dont chage
-     const int CodeB = 3;
-     const int CodeC = 2;
+   const  int CodeA = rand(); // const variable dont chage
+     const int CodeB = rand();
+     const int CodeC = rand();  //rand( return a value between 0 and 32767)
 
 // expression followed by a semi colin is a semi statement
 // declaration statements  where we declare somthing
@@ -53,11 +53,12 @@ bool PlayGame(int Difficulty)//  void retrn type //name PlayGame // void means i
 
      if(GuessSum == CodeSum && GuessProduct == CodeProduct) // conditional statement
      {
-std::cout << "\n you win!"; // ececutes if condition is met
+std::cout << "\n*** Well done agent! you have extracted a file! keep going! ***"; // ececutes if condition is met
+
 return true; // no void must contain a retur statement   for all exist paths of the function
      }
      else{
-std:: cout << "\n you lose!"; // excutes if condition is not met
+std:: cout << "\n*** You entered the wrong code! Careful Agent! Try again! ***"; // excutes if condition is not met
 return false;
 
      }
@@ -70,9 +71,10 @@ return false;
 int main(){ // int main required in every c++ program //main function
 // std short for standard is the name space for the function :: check for code inside the nae space, cout allows to write  to the terminal, << allows output from the terminal, "is a string" whole line is called the expression statement
 int LevelDifficulty = 1; //intialize outside while loop 
+int const MaxDifficulty = 5;
 // chracters like x get converted to 0
      // program will only ask for more cin if input stream is empty
-     while(true){ // while the condition is true, execute the function
+     while(LevelDifficulty <= MaxDifficulty){ // while the condition is true, execute the function // loop the game until all levels are completed
         bool bLevelComplete= PlayGame(LevelDifficulty); // if the player has completed the level
        std::cin.clear();// clear any errors  //  ignres the erro to prevent endless loop
        std::cin.ignore();// discards the buffer // helps prevent endless loop if a wrong character is is put in
@@ -86,7 +88,7 @@ int LevelDifficulty = 1; //intialize outside while loop
      }
 
      
-     
+     std:: cout << "\n*** Great work agent! You got all the files! Now get out of there! ***\n";
     return 0; //    return 0= program has ru +bn successfully, compiler ignores white space. g++ triplex.cpp -o triplex, ./triplex
 // return statement
  
