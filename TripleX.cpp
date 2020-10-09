@@ -1,4 +1,6 @@
-#include <iostream> // allow us to write the text to the terminal from the library ## include a proporoccer to include a library of code stream is a library of code
+#include <iostream> 
+#include <ctime>
+ // allow us to write the text to the terminal from the library ## include a proporoccer to include a library of code stream is a library of code
 // preprocessor directive
 
 void PrintIntroduction(  int Difficulty)  // int difficulty is the parameter so the variable can have scope
@@ -20,9 +22,9 @@ bool PlayGame(int Difficulty)//  void retrn type //name PlayGame // void means i
 
 
 
-   const  int CodeA = rand(); // const variable dont chage
-     const int CodeB = rand();
-     const int CodeC = rand();  //rand( return a value between 0 and 32767)
+   const  int CodeA = rand() % Difficulty + Difficulty; // const variable dont chage
+     const int CodeB = rand() % Difficulty + Difficulty;// intailzing random variables  between 0 and 3
+     const int CodeC = rand() % Difficulty  + Difficulty; //rand( return a value between 0 and 32767)
 
 // expression followed by a semi colin is a semi statement
 // declaration statements  where we declare somthing
@@ -69,12 +71,15 @@ return false;
 
 
 int main(){ // int main required in every c++ program //main function
+srand(time(NULL)); // create a new random sequence based on time of day
 // std short for standard is the name space for the function :: check for code inside the nae space, cout allows to write  to the terminal, << allows output from the terminal, "is a string" whole line is called the expression statement
 int LevelDifficulty = 1; //intialize outside while loop 
 int const MaxDifficulty = 5;
 // chracters like x get converted to 0
      // program will only ask for more cin if input stream is empty
-     while(LevelDifficulty <= MaxDifficulty){ // while the condition is true, execute the function // loop the game until all levels are completed
+     while(LevelDifficulty <= MaxDifficulty){ 
+       //std :: cout << rand() % 2 << "\n";
+        //while the condition is true, execute the function // loop the game until all levels are completed
         bool bLevelComplete= PlayGame(LevelDifficulty); // if the player has completed the level
        std::cin.clear();// clear any errors  //  ignres the erro to prevent endless loop
        std::cin.ignore();// discards the buffer // helps prevent endless loop if a wrong character is is put in
@@ -91,8 +96,8 @@ int const MaxDifficulty = 5;
      std:: cout << "\n*** Great work agent! You got all the files! Now get out of there! ***\n";
     return 0; //    return 0= program has ru +bn successfully, compiler ignores white space. g++ triplex.cpp -o triplex, ./triplex
 // return statement
- 
-}
+     }
+
 // think about where you declare vairables because of scope
 // g++
 // std::cin >> player game
