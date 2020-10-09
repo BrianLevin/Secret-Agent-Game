@@ -1,5 +1,5 @@
 #include <iostream> 
-#include <ctime>
+#include <ctime> // allows random code to be written based on time of day
  // allow us to write the text to the terminal from the library ## include a proporoccer to include a library of code stream is a library of code
 // preprocessor directive
 
@@ -23,7 +23,7 @@ bool PlayGame(int Difficulty)//  void retrn type //name PlayGame // void means i
 
 
    const  int CodeA = rand() % Difficulty + Difficulty; // const variable dont chage
-     const int CodeB = rand() % Difficulty + Difficulty;// intailzing random variables  between 0 and 3
+     const int CodeB = rand() % Difficulty + Difficulty;// intailzing random variables  and have the values increase by 1 after each level difficulty is completed
      const int CodeC = rand() % Difficulty  + Difficulty; //rand( return a value between 0 and 32767)
 
 // expression followed by a semi colin is a semi statement
@@ -71,7 +71,7 @@ return false;
 
 
 int main(){ // int main required in every c++ program //main function
-srand(time(NULL)); // create a new random sequence based on time of day
+srand(time(NULL)); // create a new random sequence  of numbers based on time of day so you get differant results
 // std short for standard is the name space for the function :: check for code inside the nae space, cout allows to write  to the terminal, << allows output from the terminal, "is a string" whole line is called the expression statement
 int LevelDifficulty = 1; //intialize outside while loop 
 int const MaxDifficulty = 5;
