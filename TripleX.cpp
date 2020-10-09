@@ -112,3 +112,5 @@ int const MaxDifficulty = 5;
 // functions can have parameteors whch get passed s arguments
 // && logical and operator
 // things must be defined in the  scope
+
+// % modulous oerator is a range
